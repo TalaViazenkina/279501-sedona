@@ -100,6 +100,8 @@ img {
 	color: #766357;
 }
 
+/* Главная  */
+
 .welcome {
 	text-align: center;
 	background-color: #6f7278;
@@ -459,6 +461,9 @@ img {
 /*Гостиницы*/
 
 .filters-form {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px 73px;
 	color: #ffffff;
 
 	background-color: #669ec0;
@@ -469,10 +474,18 @@ img {
 }
 
 .filters-form fieldset {
+	width: 240px;
+	margin: 0 15px 0 0;
+	padding: 0;
 	border: none;
 }
 
+.filters-form fieldset:last-of-type {
+	margin-right: auto;
+}
+
 .filters-form legend {
+	margin-bottom: 20px;
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 21px;
@@ -485,28 +498,170 @@ img {
 	list-style: none;
 }
 
+.filter-option {
+	margin-bottom: 22px;
+}
+
+.filter-option:last-child {
+	margin-bottom: 0;
+}
+
+.filter-option label {
+	position: relative;
+	padding-left: 40px;
+}
+
+.filter-option label::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 19px;
+	height: 19px;
+
+	border: 2px solid #ffffff;
+	border-radius: 3px;
+}
+
+.filter-input-checkbox:checked ~ label::before {
+	display: none;
+}
+
+.filter-input-checkbox:checked ~ label::after {
+	content: "";
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 27px;
+	height: 23px;
+
+	background-image: url("../img/checkbox-on.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.filter-input-checkbox:disabled ~ label::before {
+	border-color: #6a6a6a;
+}
+
+.filter-input-checkbox:checked:disabled ~ label::after {
+	background-image: url("../img/checkbox-on-disabled.svg");
+}
+
 .filter-price p:first-of-type {
+	margin: 0 0 8px 0;
+
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 21px;
+}
+
+.price-controls {
+	position: relative;
+	display: flex;
+
+	width: 314px;
+	margin: 0;
+
+	border: 2px solid #ffffff;
+	border-radius: 3px;
+}
+
+.price-controls::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 2px;
+	height: 22px;
+	background-color: #ffffff;
+	transform: translate(-50%, -50%);
+}
+.price-controls label {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 5px 15px 5px 60px;
+
+	cursor: pointer;
 }
 
 .price-controls input {
 	font: inherit;
 	color: #ffffff;
 
+	width: 50px;
+
 	background-color: transparent;
 	border: none;
 }
 
+.range-controls {
+	position: relative;
+	margin-bottom: 12px;
+	padding: 20px 0;
+}
+
+.range-controls .scale {
+	position: relative;
+	width: 318px;
+	height: 2px;
+
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 248px;
+	height: 2px;
+ 	
+ 	background-color: #ffffff;
+}
+
+.range-toggle {
+	position: absolute;
+	top: 11px;
+	left: 0;
+	box-sizing: content-box;
+	width: 4px;
+	height: 4px;
+	padding: 0;
+
+	background-color: #ababab;
+	border: 8px solid #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 2px 0 0 rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+
+.range-toggle-max {
+	left: 228px;
+}
+
+.range-toggle:hover,
+.range-toggle:focus {
+	border-width: 9px;
+	outline: none;
+}
+
+
+
 .filters-form-button {
+	display: block;
+	margin: 0 auto;
+	padding: 5px 34px;
+
 	font: inherit;
 	text-transform: uppercase;
 	color: #ffffff;
 
  	background-color: transparent;
  	border: 2px solid white;
- 	border-radius: 2px;
+ 	border-radius: 3px;
 }
 
 .filters-form-button:hover,
