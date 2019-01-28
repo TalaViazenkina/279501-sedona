@@ -511,7 +511,7 @@ img {
 	padding-left: 40px;
 }
 
-.filter-option label::before {
+.filter-input-checkbox:not(:checked) ~ label::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -523,12 +523,7 @@ img {
 	border-radius: 3px;
 }
 
-.filter-input-checkbox:checked ~ label::before {
-	display: none;
-}
-
 .filter-input-checkbox:checked ~ label::after {
-	content: "";
 	content: "";
 	position: absolute;
 	top: 0;
@@ -541,12 +536,25 @@ img {
 	background-position: center;
 }
 
-.filter-input-checkbox:disabled ~ label::before {
+.filter-input-checkbox:not(:checked):disabled ~ label::after {
 	border-color: #6a6a6a;
 }
 
 .filter-input-checkbox:checked:disabled ~ label::after {
 	background-image: url("../img/checkbox-on-disabled.svg");
+}
+
+ /* Для отображения фокуса с клавиатуры */
+.filter-input-checkbox:focus ~ label::before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 4px;
+
+	width: 15px;
+	height: 15px;
+
+	background-color: rgba(255, 255, 255, 0.6);
 }
 
 .filter-price p:first-of-type {
@@ -582,7 +590,7 @@ img {
 .price-controls label {
 	box-sizing: border-box;
 	width: 50%;
-	padding: 5px 15px 5px 60px;
+	padding: 6px 15px 6px 60px;
 
 	cursor: pointer;
 }
@@ -592,6 +600,7 @@ img {
 	color: #ffffff;
 
 	width: 50px;
+	padding: 0;
 
 	background-color: transparent;
 	border: none;
@@ -648,8 +657,6 @@ img {
 	outline: none;
 }
 
-
-
 .filters-form-button {
 	display: block;
 	margin: 0 auto;
@@ -669,6 +676,7 @@ img {
 	color: #000000;
 
 	background-color: #ffffff;
+	outline: none;
 }
 
 .hotels {
