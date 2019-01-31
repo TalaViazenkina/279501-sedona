@@ -505,6 +505,20 @@ img {
 	background-color: #5496bd;
 } 
 
+.map {
+	position: relative;
+}
+
+.map iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	border: 0;
+}
+
+
+
 /*Гостиницы*/
 
 .filters-form {
