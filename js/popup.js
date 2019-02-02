@@ -22,7 +22,6 @@ popup.addEventListener("submit", function (evt) {
 		popup.offsetWidth = popup.offsetWidth;
 		popup.classList.add("search-form-error");
 	}
-
 });
 
 window.addEventListener("keydown", function (evt) {
@@ -33,7 +32,6 @@ window.addEventListener("keydown", function (evt) {
 			popup.classList.remove("search-form-error");
 		}
 	}
-
 });
 
 
