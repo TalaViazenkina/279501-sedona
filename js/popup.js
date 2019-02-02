@@ -5,6 +5,9 @@ var departureDate = popup.querySelector("[name=departure]");
 var adultQuantity = popup.querySelector("[name=adult");
 var childQuantity = popup.querySelector("[name=child]");
 
+popup.classList.add("search-form-hidden");
+popup.classList.remove("search-form-show");
+
 link.addEventListener("click", function (evt) {
 	evt.preventDefault(); 
 	popup.classList.toggle("search-form-hidden");
